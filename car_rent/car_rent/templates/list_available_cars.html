@@ -1,0 +1,32 @@
+<html>
+<title>
+    Available cars
+</title>
+<body>
+	{% if data_list == None %}
+		<h1>Cannot find available cars!</h1>
+
+	{% else %}
+		<h1>Available cars:</h1>
+		<table border="1">
+		<tr>
+		  <th>Car ID</th>
+		  <th>Brand</th>
+		  <th>Body type</th>
+		  <th>Year of Manufacture</th>
+		</tr>
+		
+		  {% for item in data_list %}
+		  <tr>
+			<td>{{item.id}}</td>
+			<td>{{item.brand}}</td>
+			<td>{{item.body_type}}</td>
+			<td>{{item.year_manufactured}}</td>
+		  </tr>
+		  {% endfor %}  
+		
+		</table>
+	{% endif %}
+</body>
+
+</html>

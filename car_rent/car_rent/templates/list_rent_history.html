@@ -1,0 +1,38 @@
+<html>
+<title>
+    rent history
+</title>
+<body>
+	{% if data_list == None %}
+		<h1>Cannot find rent history!</h1>
+
+	{% else %}
+		<h1>Rent history:</h1>
+		<table border="1">
+		<tr>
+		  <th>Rent ID</th>
+		  <th>Username</th>
+		  <th>Brand</th>
+		  <th>Body type</th>		  
+		  <th>Year of Manufacture</th>
+		  <th>Pickup time</th>
+		  <th>Return time</th>
+		</tr>
+		
+		  {% for item in data_list %}
+		  <tr>
+			<td>{{item.rent_id}}</td>
+			<td>{{item.username}}</td>
+			<td>{{item.brand}}</td>
+			<td>{{item.body_type}}</td>
+			<td>{{item.year_manufactured}}</td>
+			<td>{{item.pickup_ts}}</td>
+			<td>{{item.return_ts}}</td>
+		  </tr>
+		  {% endfor %}  
+		
+		</table>
+	{% endif %}
+</body>
+
+</html>

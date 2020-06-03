@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>mp_listener module &#8212; mp_listener  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-mp_listener">
+<span id="mp-listener-module"></span><h1>mp_listener module<a class="headerlink" href="#module-mp_listener" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="mp_listener.MyTCPHandler">
+<em class="property">class </em><code class="sig-prename descclassname">mp_listener.</code><code class="sig-name descname">MyTCPHandler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">client_address</span></em>, <em class="sig-param"><span class="n">server</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_listener.MyTCPHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">socketserver.BaseRequestHandler</span></code></p>
+<p>The request handler class for our server.</p>
+<p>It is instantiated once per connection to the server, and
+override the handle() method to implement communication to the
+client.</p>
+<dl class="py method">
+<dt id="mp_listener.MyTCPHandler.action_return">
+<code class="sig-name descname">action_return</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">req</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_listener.MyTCPHandler.action_return" title="Permalink to this definition">¶</a></dt>
+<dd><p>member function to handle return car action</p>
+<p>Parse the request information and call cloud api to update database
+to return the car</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>req: A dict mapping request parameters</p>
+</dd>
+<dt>Returns:</dt><dd><p>result in json format form cloud api restful interface</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mp_listener.MyTCPHandler.action_unlock">
+<code class="sig-name descname">action_unlock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">req</span></em><span class="sig-paren">)</span><a class="headerlink" href="#mp_listener.MyTCPHandler.action_unlock" title="Permalink to this definition">¶</a></dt>
+<dd><p>member function to handle unlock car action</p>
+<p>Parse the request information and call cloud api to update database
+to unlock the car</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>req: A dict mapping request parameters</p>
+</dd>
+<dt>Returns:</dt><dd><p>result in json format form cloud api restful interface</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="mp_listener.MyTCPHandler.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mp_listener.MyTCPHandler.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>It is a function defined in socketserver.BaseRequestHandler</p>
+<p>To handle incoming socket package and response respective information
+in json format.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>results in json format.
+because socket is a byte stream, so the we use result.encode() to 
+convert.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mp_listener</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, author.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/mp_listener.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

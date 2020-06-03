@@ -1,0 +1,14 @@
+<html>
+
+<title>register</title>
+
+
+<body>
+	{% if result['status'] != 0 %}
+		<h1>{{result['message']}}</h1>
+	{% else %}
+		<h1>Successfully registered user</h1>
+	{% endif %}
+</body>
+
+</html>
